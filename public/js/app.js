@@ -83,10 +83,40 @@
       : hit.overview;
   }
 
-  // The fallback is always rendered after the <img>; CSS only shows it when the
-  // image is missing or fails to load (the card gets .poster-broken).
-  function posterFallback(html) {
-    return html`<div class="poster-fallback">🎬<span>No Poster</span></div>`;
+  // Movies without a poster image get a generated one: a gradient in the
+  // colour of their first genre with the title set in large type. It is always
+  // rendered after the <img>, and CSS only shows it when there is no image or
+  // the image fails to load (the card then gets .poster-broken).
+  const GENRE_HUES = {
+    Action: 8, Adventure: 28, Animation: 285, Comedy: 45, Crime: 215,
+    Drama: 200, Family: 150, Fantasy: 265, History: 35, Horror: 350,
+    Music: 310, Mystery: 240, Romance: 330, 'Science Fiction': 185,
+    Thriller: 255, War: 95,
+  };
+
+  function posterHue(hit) {
+    const genre = firstGenre(hit);
+    if (genre in GENRE_HUES) return GENRE_HUES[genre];
+    let hash = 0;
+    for (const char of String(hit.title || '')) hash = (hash * 31 + char.charCodeAt(0)) % 360;
+    return hash;
+  }
+
+  // Shrink long titles so whole words fit on the poster.
+  function posterTitleSize(title) {
+    const longestWord = Math.max(...String(title || '').split(/\s+/).map((w) => w.length));
+    const length = String(title || '').length;
+    if (longestWord > 10 || length > 24) return '1.5rem';
+    if (longestWord > 8 || length > 14) return '1.8rem';
+    return '2.2rem';
+  }
+
+  function posterArt(hit, html) {
+    return html`<div class="poster-art" style=${`--hue: ${posterHue(hit)}`} aria-hidden="true">
+      <span class="poster-art-genre">${firstGenre(hit)}</span>
+      <span class="poster-art-title" style=${`font-size: ${posterTitleSize(hit.title)}`}>${hit.title}</span>
+      <span class="poster-art-year">${releaseYear(hit)}</span>
+    </div>`;
   }
 
   function poster(hit, html) {
@@ -139,7 +169,7 @@
           <article class="movie-card">
             <div class="poster-wrap">
               ${poster(hit, html)}
-              ${posterFallback(html)}
+              ${posterArt(hit, html)}
               ${hit.vote_average
                 ? html`<div class="rating-pill">⭐ ${Number(hit.vote_average).toFixed(1)}</div>`
                 : ''}
@@ -199,6 +229,11 @@
       scrollTo: '.results',
     }),
   ]);
+
+  // On small screens the filters start collapsed so results are visible first.
+  if (window.matchMedia('(max-width: 700px)').matches) {
+    document.getElementById('filters').open = false;
+  }
 
   search.start();
 })();
