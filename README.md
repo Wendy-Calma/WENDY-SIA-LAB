@@ -11,7 +11,7 @@ A batch sync job that indexes a MySQL movie catalogue into **Algolia**, and an
 typo tolerance, highlighting, genre and year facets, and pagination.
 
 ![CineSearch screenshot](docs/screenshot.png)
-<sub>Screenshot of the front end running in demo mode on the built-in sample data.</sub>
+<sub>Screenshot with the sample movie catalogue.</sub>
 
 ---
 
@@ -36,13 +36,13 @@ flowchart LR
 
 ## Features
 
-- Instant search with highlighted matches and typo tolerance
-- Genre and release-year filters, with active-filter chips and "clear all"
-- Results ranked by relevance, then by rating
-- Search state kept in the URL, so results can be bookmarked and shared
-- Responsive layout, graceful poster fallbacks, clear error states
-- Secrets loaded from `.env`; only a search-only key ever reaches the browser
-- Demo mode: with no Algolia app configured (or if it is unreachable), the UI
+- ⚡ Instant search with highlighted matches and typo tolerance
+- 🎭 Genre and release-year filters, with active-filter chips and "clear all"
+- ⭐ Results ranked by relevance, then by rating
+- 🔗 Search state kept in the URL, so results can be bookmarked and shared
+- 📱 Responsive layout, graceful poster fallbacks, clear error states
+- 🔐 Secrets loaded from `.env`; only a search-only key ever reaches the browser
+- 🧪 Demo mode: with no Algolia app configured (or if it is unreachable), the UI
   searches a built-in sample catalogue instead, so the live demo never breaks
 
 ## Tech stack
