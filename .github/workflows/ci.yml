@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  php:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer
+      - run: composer validate --no-check-publish
+      - run: composer install --no-interaction --no-progress
+      - name: Lint
+        run: find sync tests -name '*.php' -print0 | xargs -0 -n1 php -l
+      - run: composer test
+
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax-check front-end JavaScript
+        run: for f in public/js/*.js; do node --check "$f"; done

@@ -1,5 +1,23 @@
 {
+    "name": "wendy-calma/movie-search-engine",
+    "description": "Batch sync of a MySQL movie catalogue into Algolia, with an instant-search web front end.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        { "name": "Wendy Rizza V. Calma" }
+    ],
     "require": {
+        "php": ">=8.1",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
         "algolia/algoliasearch-client-php": "^4.0"
+    },
+    "scripts": {
+        "sync": "php sync/sync.php",
+        "test": "php tests/LibTest.php",
+        "serve": "php -S localhost:8000 -t public"
+    },
+    "config": {
+        "sort-packages": true
     }
 }
