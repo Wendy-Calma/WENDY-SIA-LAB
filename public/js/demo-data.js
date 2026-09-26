@@ -1,0 +1,31 @@
+/**
+ * Sample movies used by demo mode (see demo-search.js), so the front end
+ * still works when no Algolia app is configured or reachable.
+ * Same record shape that sync/sync.php pushes to Algolia.
+ */
+window.CINESEARCH_DEMO_MOVIES = [
+  { objectID: 'd1', title: 'Inception', genre: ['Action', 'Science Fiction', 'Adventure'], release_year: 2010, vote_average: 8.4, overview: 'A thief who steals secrets through dream-sharing technology is offered a chance to erase his past by planting an idea in a target\'s mind.' },
+  { objectID: 'd2', title: 'Spirited Away', genre: ['Animation', 'Family', 'Fantasy'], release_year: 2001, vote_average: 8.5, overview: 'A ten-year-old girl wanders into a world ruled by gods, witches and spirits, where humans are changed into beasts.' },
+  { objectID: 'd3', title: 'Parasite', genre: ['Comedy', 'Thriller', 'Drama'], release_year: 2019, vote_average: 8.5, overview: 'A poor family schemes to become employed by a wealthy household by posing as unrelated, highly qualified workers.' },
+  { objectID: 'd4', title: 'The Dark Knight', genre: ['Action', 'Crime', 'Drama'], release_year: 2008, vote_average: 8.5, overview: 'Batman raises the stakes in his war on crime and faces a criminal mastermind known as the Joker.' },
+  { objectID: 'd5', title: 'Heneral Luna', genre: ['History', 'War', 'Drama'], release_year: 2015, vote_average: 7.3, overview: 'General Antonio Luna leads the Philippine army in the Philippine–American War while battling divisions within his own government.' },
+  { objectID: 'd6', title: 'Coco', genre: ['Animation', 'Family', 'Music'], release_year: 2017, vote_average: 8.2, overview: 'Aspiring musician Miguel is transported to the Land of the Dead to find his great-great-grandfather, a legendary singer.' },
+  { objectID: 'd7', title: 'Interstellar', genre: ['Adventure', 'Drama', 'Science Fiction'], release_year: 2014, vote_average: 8.4, overview: 'A team of explorers travels through a wormhole in space in an attempt to ensure humanity\'s survival.' },
+  { objectID: 'd8', title: 'The Shawshank Redemption', genre: ['Drama', 'Crime'], release_year: 1994, vote_average: 8.7, overview: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.' },
+  { objectID: 'd9', title: 'Your Name', genre: ['Animation', 'Romance', 'Drama'], release_year: 2016, vote_average: 8.5, overview: 'Two teenagers who have never met discover they are mysteriously swapping bodies, and set out to find each other.' },
+  { objectID: 'd10', title: 'Toy Story', genre: ['Animation', 'Family', 'Comedy'], release_year: 1995, vote_average: 8.0, overview: 'A cowboy doll feels threatened when a new spaceman action figure becomes his owner\'s favourite toy.' },
+  { objectID: 'd11', title: 'The Matrix', genre: ['Action', 'Science Fiction'], release_year: 1999, vote_average: 8.2, overview: 'A computer hacker learns that the world he lives in is a simulation and joins a rebellion against its machine controllers.' },
+  { objectID: 'd12', title: 'Get Out', genre: ['Horror', 'Thriller', 'Mystery'], release_year: 2017, vote_average: 7.6, overview: 'A young man visits his girlfriend\'s family for a weekend and uncovers a disturbing secret behind their hospitality.' },
+  { objectID: 'd13', title: 'La La Land', genre: ['Romance', 'Music', 'Drama'], release_year: 2016, vote_average: 7.9, overview: 'A jazz pianist and an aspiring actress fall in love while chasing their dreams in Los Angeles.' },
+  { objectID: 'd14', title: 'Mad Max: Fury Road', genre: ['Action', 'Adventure', 'Science Fiction'], release_year: 2015, vote_average: 7.6, overview: 'In a post-apocalyptic wasteland, a drifter and a rebel commander flee across the desert from a tyrannical warlord.' },
+  { objectID: 'd15', title: 'Hello, Love, Goodbye', genre: ['Romance', 'Drama'], release_year: 2019, vote_average: 7.4, overview: 'Two Filipino overseas workers in Hong Kong fall in love while each is set on a plan that could pull them apart.' },
+  { objectID: 'd16', title: 'The Godfather', genre: ['Drama', 'Crime'], release_year: 1972, vote_average: 8.7, overview: 'The ageing patriarch of an organised crime dynasty transfers control of his empire to his reluctant youngest son.' },
+  { objectID: 'd17', title: 'Everything Everywhere All at Once', genre: ['Action', 'Adventure', 'Science Fiction', 'Comedy'], release_year: 2022, vote_average: 7.8, overview: 'A laundromat owner discovers she must connect with versions of herself in parallel universes to save the multiverse.' },
+  { objectID: 'd18', title: 'Train to Busan', genre: ['Horror', 'Thriller', 'Action'], release_year: 2016, vote_average: 7.8, overview: 'Passengers on a high-speed train fight for survival as a zombie outbreak spreads across South Korea.' },
+  { objectID: 'd19', title: 'Finding Nemo', genre: ['Animation', 'Family', 'Adventure'], release_year: 2003, vote_average: 7.8, overview: 'A timid clownfish sets out across the ocean to bring his son home after he is captured by a diver.' },
+  { objectID: 'd20', title: 'Oppenheimer', genre: ['Drama', 'History'], release_year: 2023, vote_average: 8.1, overview: 'The story of physicist J. Robert Oppenheimer and his role in the development of the atomic bomb.' },
+  { objectID: 'd21', title: 'Dune: Part Two', genre: ['Science Fiction', 'Adventure'], release_year: 2024, vote_average: 8.2, overview: 'Paul Atreides unites with the Fremen on a path of revenge against the conspirators who destroyed his family.' },
+  { objectID: 'd22', title: 'A Quiet Place', genre: ['Horror', 'Science Fiction', 'Drama'], release_year: 2018, vote_average: 7.4, overview: 'A family must live in silence to hide from creatures that hunt by sound.' },
+  { objectID: 'd23', title: 'Up', genre: ['Animation', 'Comedy', 'Family', 'Adventure'], release_year: 2009, vote_average: 8.0, overview: 'An elderly widower ties thousands of balloons to his house and flies to South America, with a young stowaway aboard.' },
+  { objectID: 'd24', title: 'Gladiator', genre: ['Action', 'Drama', 'Adventure'], release_year: 2000, vote_average: 8.2, overview: 'A betrayed Roman general is forced into slavery and rises through the arena to avenge his family.' },
+];

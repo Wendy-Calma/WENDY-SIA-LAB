@@ -443,6 +443,20 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
 /* ── STATUS MESSAGES ── */
+.demo-badge {
+  margin-left: auto;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: help;
+}
+
+.demo-badge[hidden] { display: none; }
+
 .search-error {
   padding: 2rem;
   color: #e07060;

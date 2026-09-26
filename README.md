@@ -11,7 +11,7 @@ A batch sync job that indexes a MySQL movie catalogue into **Algolia**, and an
 typo tolerance, highlighting, genre and year facets, and pagination.
 
 ![CineSearch screenshot](docs/screenshot.png)
-<sub>Screenshot rendered with sample data.</sub>
+<sub>Screenshot of the front end running in demo mode on the built-in sample data.</sub>
 
 ---
 
@@ -36,12 +36,14 @@ flowchart LR
 
 ## Features
 
-- ⚡ Instant search with highlighted matches and typo tolerance
-- 🎭 Genre and release-year filters, with active-filter chips and "clear all"
-- ⭐ Results ranked by relevance, then by rating
-- 🔗 Search state kept in the URL, so results can be bookmarked and shared
-- 📱 Responsive layout, graceful poster fallbacks, clear error states
-- 🔐 Secrets loaded from `.env`; only a search-only key ever reaches the browser
+- Instant search with highlighted matches and typo tolerance
+- Genre and release-year filters, with active-filter chips and "clear all"
+- Results ranked by relevance, then by rating
+- Search state kept in the URL, so results can be bookmarked and shared
+- Responsive layout, graceful poster fallbacks, clear error states
+- Secrets loaded from `.env`; only a search-only key ever reaches the browser
+- Demo mode: with no Algolia app configured (or if it is unreachable), the UI
+  searches a built-in sample catalogue instead, so the live demo never breaks
 
 ## Tech stack
 
@@ -59,13 +61,16 @@ flowchart LR
 .
 ├── database/
 │   ├── schema.sql        # movies table definition
-│   └── seed.sql          # sample rows to try the pipeline
+│   ├── seed.sql          # sample rows to try the pipeline
+│   └── movies.json       # sample records for a no-code upload in the Algolia dashboard
 ├── public/               # static front end (deployed to GitHub Pages)
 │   ├── index.html
 │   ├── css/styles.css
 │   └── js/
-│       ├── config.js     # Algolia app ID, search-only key, index name
-│       └── app.js        # InstantSearch widgets and templates
+│       ├── config.js     # Algolia app ID, search-only key, index name, demo mode
+│       ├── app.js        # InstantSearch widgets and templates
+│       ├── demo-search.js # in-browser search client used in demo mode
+│       └── demo-data.js  # sample movies for demo mode
 ├── sync/
 │   ├── sync.php          # MySQL → Algolia batch job
 │   └── lib.php           # .env loading and record transformation
@@ -105,7 +110,7 @@ composer sync
 ```
 
 ```
-Starting sync: MySQL `moviedb.movies` → Algolia index 'Wendy_movie'
+Starting sync: MySQL `moviedb.movies` → Algolia index 'movies'
 ------------------------------------------------------------
   Synced 6 records (total 6, last id 6)
 ------------------------------------------------------------
@@ -114,13 +119,33 @@ Applying index settings…
 Sync complete.
 ```
 
+> **No MySQL?** You can skip steps 2–3 and upload `database/movies.json` in the
+> Algolia dashboard instead (Search → your index → *Add records* → *Upload file*),
+> then set the same searchable attributes, facets and ranking that `sync.php` applies.
+
 ### 4. Run the front end
 
-Put your **search-only** key and index name in `public/js/config.js`, then:
+Put your App ID, **search-only** key and index name in `public/js/config.js`, then:
 
 ```bash
 composer serve            # http://localhost:8000
 ```
+
+### Demo mode
+
+The front end also runs with no Algolia account at all. `demoMode` in
+`public/js/config.js` controls this:
+
+| Value              | Behaviour                                                                  |
+|--------------------|----------------------------------------------------------------------------|
+| `'auto'` (default) | Use Algolia when configured; otherwise, or if a request fails, use sample data |
+| `true`             | Always use the sample data                                                 |
+| `false`            | Algolia only                                                               |
+
+In demo mode, `public/js/demo-search.js` implements the parts of the Algolia
+search API that InstantSearch uses (prefix matching, facet counts, facet
+filters, pagination and highlighting) over `public/js/demo-data.js`, and a
+**Demo data** badge is shown next to the result count.
 
 ## API keys and security
 

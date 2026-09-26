@@ -41,6 +41,8 @@
     <section class="results" aria-label="Search results">
       <div class="results-meta">
         <div id="stats" aria-live="polite"></div>
+        <span id="demo-badge" class="demo-badge" hidden
+              title="Algolia is not connected, so results come from built-in sample data.">Demo data</span>
       </div>
       <div id="hits"></div>
       <div id="pagination"></div>
@@ -51,6 +53,8 @@
   <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.27.0/dist/algoliasearch-lite.umd.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.118.0/dist/instantsearch.production.min.js"></script>
   <script src="js/config.js"></script>
+  <script src="js/demo-data.js"></script>
+  <script src="js/demo-search.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

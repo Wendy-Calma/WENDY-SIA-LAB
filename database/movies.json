@@ -1,0 +1,310 @@
+[
+  {
+    "objectID": "1",
+    "title": "Inception",
+    "overview": "A thief who steals secrets through dream-sharing technology is offered a chance to erase his past by planting an idea in a target's mind.",
+    "genre": [
+      "Action",
+      "Science Fiction",
+      "Adventure"
+    ],
+    "release_year": 2010,
+    "vote_average": 8.4,
+    "poster_url": null
+  },
+  {
+    "objectID": "2",
+    "title": "Spirited Away",
+    "overview": "A ten-year-old girl wanders into a world ruled by gods, witches and spirits, where humans are changed into beasts.",
+    "genre": [
+      "Animation",
+      "Family",
+      "Fantasy"
+    ],
+    "release_year": 2001,
+    "vote_average": 8.5,
+    "poster_url": null
+  },
+  {
+    "objectID": "3",
+    "title": "Parasite",
+    "overview": "A poor family schemes to become employed by a wealthy household by posing as unrelated, highly qualified workers.",
+    "genre": [
+      "Comedy",
+      "Thriller",
+      "Drama"
+    ],
+    "release_year": 2019,
+    "vote_average": 8.5,
+    "poster_url": null
+  },
+  {
+    "objectID": "4",
+    "title": "The Dark Knight",
+    "overview": "Batman raises the stakes in his war on crime and faces a criminal mastermind known as the Joker.",
+    "genre": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "release_year": 2008,
+    "vote_average": 8.5,
+    "poster_url": null
+  },
+  {
+    "objectID": "5",
+    "title": "Heneral Luna",
+    "overview": "General Antonio Luna leads the Philippine army in the Philippine–American War while battling divisions within his own government.",
+    "genre": [
+      "History",
+      "War",
+      "Drama"
+    ],
+    "release_year": 2015,
+    "vote_average": 7.3,
+    "poster_url": null
+  },
+  {
+    "objectID": "6",
+    "title": "Coco",
+    "overview": "Aspiring musician Miguel is transported to the Land of the Dead to find his great-great-grandfather, a legendary singer.",
+    "genre": [
+      "Animation",
+      "Family",
+      "Music"
+    ],
+    "release_year": 2017,
+    "vote_average": 8.2,
+    "poster_url": null
+  },
+  {
+    "objectID": "7",
+    "title": "Interstellar",
+    "overview": "A team of explorers travels through a wormhole in space in an attempt to ensure humanity's survival.",
+    "genre": [
+      "Adventure",
+      "Drama",
+      "Science Fiction"
+    ],
+    "release_year": 2014,
+    "vote_average": 8.4,
+    "poster_url": null
+  },
+  {
+    "objectID": "8",
+    "title": "The Shawshank Redemption",
+    "overview": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "genre": [
+      "Drama",
+      "Crime"
+    ],
+    "release_year": 1994,
+    "vote_average": 8.7,
+    "poster_url": null
+  },
+  {
+    "objectID": "9",
+    "title": "Your Name",
+    "overview": "Two teenagers who have never met discover they are mysteriously swapping bodies, and set out to find each other.",
+    "genre": [
+      "Animation",
+      "Romance",
+      "Drama"
+    ],
+    "release_year": 2016,
+    "vote_average": 8.5,
+    "poster_url": null
+  },
+  {
+    "objectID": "10",
+    "title": "Toy Story",
+    "overview": "A cowboy doll feels threatened when a new spaceman action figure becomes his owner's favourite toy.",
+    "genre": [
+      "Animation",
+      "Family",
+      "Comedy"
+    ],
+    "release_year": 1995,
+    "vote_average": 8,
+    "poster_url": null
+  },
+  {
+    "objectID": "11",
+    "title": "The Matrix",
+    "overview": "A computer hacker learns that the world he lives in is a simulation and joins a rebellion against its machine controllers.",
+    "genre": [
+      "Action",
+      "Science Fiction"
+    ],
+    "release_year": 1999,
+    "vote_average": 8.2,
+    "poster_url": null
+  },
+  {
+    "objectID": "12",
+    "title": "Get Out",
+    "overview": "A young man visits his girlfriend's family for a weekend and uncovers a disturbing secret behind their hospitality.",
+    "genre": [
+      "Horror",
+      "Thriller",
+      "Mystery"
+    ],
+    "release_year": 2017,
+    "vote_average": 7.6,
+    "poster_url": null
+  },
+  {
+    "objectID": "13",
+    "title": "La La Land",
+    "overview": "A jazz pianist and an aspiring actress fall in love while chasing their dreams in Los Angeles.",
+    "genre": [
+      "Romance",
+      "Music",
+      "Drama"
+    ],
+    "release_year": 2016,
+    "vote_average": 7.9,
+    "poster_url": null
+  },
+  {
+    "objectID": "14",
+    "title": "Mad Max: Fury Road",
+    "overview": "In a post-apocalyptic wasteland, a drifter and a rebel commander flee across the desert from a tyrannical warlord.",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Science Fiction"
+    ],
+    "release_year": 2015,
+    "vote_average": 7.6,
+    "poster_url": null
+  },
+  {
+    "objectID": "15",
+    "title": "Hello, Love, Goodbye",
+    "overview": "Two Filipino overseas workers in Hong Kong fall in love while each is set on a plan that could pull them apart.",
+    "genre": [
+      "Romance",
+      "Drama"
+    ],
+    "release_year": 2019,
+    "vote_average": 7.4,
+    "poster_url": null
+  },
+  {
+    "objectID": "16",
+    "title": "The Godfather",
+    "overview": "The ageing patriarch of an organised crime dynasty transfers control of his empire to his reluctant youngest son.",
+    "genre": [
+      "Drama",
+      "Crime"
+    ],
+    "release_year": 1972,
+    "vote_average": 8.7,
+    "poster_url": null
+  },
+  {
+    "objectID": "17",
+    "title": "Everything Everywhere All at Once",
+    "overview": "A laundromat owner discovers she must connect with versions of herself in parallel universes to save the multiverse.",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Science Fiction",
+      "Comedy"
+    ],
+    "release_year": 2022,
+    "vote_average": 7.8,
+    "poster_url": null
+  },
+  {
+    "objectID": "18",
+    "title": "Train to Busan",
+    "overview": "Passengers on a high-speed train fight for survival as a zombie outbreak spreads across South Korea.",
+    "genre": [
+      "Horror",
+      "Thriller",
+      "Action"
+    ],
+    "release_year": 2016,
+    "vote_average": 7.8,
+    "poster_url": null
+  },
+  {
+    "objectID": "19",
+    "title": "Finding Nemo",
+    "overview": "A timid clownfish sets out across the ocean to bring his son home after he is captured by a diver.",
+    "genre": [
+      "Animation",
+      "Family",
+      "Adventure"
+    ],
+    "release_year": 2003,
+    "vote_average": 7.8,
+    "poster_url": null
+  },
+  {
+    "objectID": "20",
+    "title": "Oppenheimer",
+    "overview": "The story of physicist J. Robert Oppenheimer and his role in the development of the atomic bomb.",
+    "genre": [
+      "Drama",
+      "History"
+    ],
+    "release_year": 2023,
+    "vote_average": 8.1,
+    "poster_url": null
+  },
+  {
+    "objectID": "21",
+    "title": "Dune: Part Two",
+    "overview": "Paul Atreides unites with the Fremen on a path of revenge against the conspirators who destroyed his family.",
+    "genre": [
+      "Science Fiction",
+      "Adventure"
+    ],
+    "release_year": 2024,
+    "vote_average": 8.2,
+    "poster_url": null
+  },
+  {
+    "objectID": "22",
+    "title": "A Quiet Place",
+    "overview": "A family must live in silence to hide from creatures that hunt by sound.",
+    "genre": [
+      "Horror",
+      "Science Fiction",
+      "Drama"
+    ],
+    "release_year": 2018,
+    "vote_average": 7.4,
+    "poster_url": null
+  },
+  {
+    "objectID": "23",
+    "title": "Up",
+    "overview": "An elderly widower ties thousands of balloons to his house and flies to South America, with a young stowaway aboard.",
+    "genre": [
+      "Animation",
+      "Comedy",
+      "Family",
+      "Adventure"
+    ],
+    "release_year": 2009,
+    "vote_average": 8,
+    "poster_url": null
+  },
+  {
+    "objectID": "24",
+    "title": "Gladiator",
+    "overview": "A betrayed Roman general is forced into slavery and rises through the arena to avenge his family.",
+    "genre": [
+      "Action",
+      "Drama",
+      "Adventure"
+    ],
+    "release_year": 2000,
+    "vote_average": 8.2,
+    "poster_url": null
+  }
+]

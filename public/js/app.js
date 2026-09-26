@@ -19,9 +19,44 @@
     container.replaceChildren(box);
   }
 
-  if (!config.appId || !config.searchApiKey || !config.indexName) {
+  // ── Search client: Algolia, or the built-in demo data ───────────────────
+  //
+  // demoMode 'auto' (default): use Algolia when it is configured, and fall
+  // back to the sample movies if it is missing or a request fails (e.g. the
+  // Algolia app was suspended). true: always demo. false: Algolia only.
+
+  const demoMode = config.demoMode ?? 'auto';
+  const algoliaConfigured = Boolean(config.appId && config.searchApiKey && config.indexName);
+  const demoClient = window.createDemoSearchClient(window.CINESEARCH_DEMO_MOVIES || []);
+  let usingDemo = demoMode === true || (demoMode === 'auto' && !algoliaConfigured);
+
+  if (demoMode === false && !algoliaConfigured) {
     showFatalError('Algolia is not configured. Fill in public/js/config.js.');
     return;
+  }
+
+  function showDemoBadge() {
+    document.getElementById('demo-badge').hidden = false;
+  }
+
+  function createSearchClient() {
+    if (usingDemo) {
+      showDemoBadge();
+      return demoClient;
+    }
+    const algolia = algoliasearch(config.appId, config.searchApiKey);
+    if (demoMode !== 'auto') return algolia;
+    return {
+      search(requests) {
+        if (usingDemo) return demoClient.search(requests);
+        return algolia.search(requests).catch((error) => {
+          console.warn('Algolia unavailable, switching to demo data:', error);
+          usingDemo = true;
+          showDemoBadge();
+          return demoClient.search(requests);
+        });
+      },
+    };
   }
 
   // ── Helpers for rendering a hit ──────────────────────────────────────────
@@ -67,8 +102,8 @@
   // ── InstantSearch setup ──────────────────────────────────────────────────
 
   const search = instantsearch({
-    indexName: config.indexName,
-    searchClient: algoliasearch(config.appId, config.searchApiKey),
+    indexName: config.indexName || 'movies',
+    searchClient: createSearchClient(),
     routing: true, // keep the query and filters in the URL so results can be shared
   });
 
@@ -93,7 +128,7 @@
       container: '#stats',
       templates: {
         text: ({ nbHits, processingTimeMS }) =>
-          `${nbHits.toLocaleString()} movies found in ${processingTimeMS}ms`,
+          `${nbHits.toLocaleString()} ${nbHits === 1 ? 'movie' : 'movies'} found in ${processingTimeMS}ms`,
       },
     }),
 
